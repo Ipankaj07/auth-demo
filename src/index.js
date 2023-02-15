@@ -27,6 +27,7 @@ const passport = require("./configs/passport");
 app.use(passport.initialize());
 app.use(passport.session());
 
+/* Google Auth Routes */
 app.get(
   "/auth/google",
   passport.authenticate("google", {
@@ -49,6 +50,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to the API");
 });
 
+/* To see All Login User Details */
 app.use('/user', userController);
 
 module.exports = app;
